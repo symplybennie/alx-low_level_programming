@@ -18,7 +18,7 @@ void times_table(void)
 		{
 			rep = a * b;
 			
-			:wqif (b == 0)
+			if (b == 0)
 			{
 				_putchar('0' + rep);
 			}
