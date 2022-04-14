@@ -17,7 +17,6 @@ void times_table(void)
 		while (b <= 9)
 		{
 			rep = a * b;
-			
 			if (b == 0)
 			{
 				_putchar('0' + rep);
