@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
 *_strien -length of a string
@@ -9,12 +10,12 @@
 
 int _strlen(char *s)
 {
-	int u;
+	int count = 0;
 
-	u= 0;
-	while(s[u] != '\0');
+	for (; *s != '\0'; s++)
 	{
-		u++;
+		count++;
 	}
-	return (u);
+
+	return (count);
 }
