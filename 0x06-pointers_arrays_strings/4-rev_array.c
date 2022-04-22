@@ -24,10 +24,10 @@ e = n - 1;
 */
 while (s < e)
 {
-   temp = a[s];
-   a[s] = a[e];
-   a[e] = temp;
-   s++;
-   e--;
+temp = a[s];
+a[s] = a[e];
+a[e] = temp;
+s++;
+e--;
 }
 }
