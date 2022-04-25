@@ -16,12 +16,11 @@ int temp, s, e;
 
 s = 0;
 e = n - 1;
-/**
-* set value in array a in temp
+/*
+*set value in array a in temp
 * then place the last array in
 * the first array then place
-* value in temp to last array
-*/
+* value in temp to last array **/
 while (s < e)
 {
 temp = a[s];
