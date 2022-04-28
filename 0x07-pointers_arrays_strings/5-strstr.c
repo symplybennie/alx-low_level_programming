@@ -1,28 +1,29 @@
 #include "main.h"
 
 /**
-* _strpbrk - matches any character specified
-* @s: This is the C string to be scanned.
-* @accept:character in str1 that matches one of the characters in str2
-*Return: string s that matches any character specified in accept
+* _strstr - first occurrence of the substring needle in the string haystack
+* @haystack: main str to be examined
+* @needle: searched in haystack
+* Return: return 0
 **/
 
-char *_strpbrk(char *s, char *accept)
+char  *_strstr(char *haystack, char *needle)
 {
-int j;
+char *str1, *str2; /*Declaring variables*/
 
-while (*s != '\0') /*Declaring WHILE*/
+while (*haystack != '\0')
 {
-j = 0;
-while (accept[j] != '\0')  /*Evaluating *accept*/
+str1 = haystack; /*values*/
+str2 = needle;
+/*Star WHILE*/
+while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
 {
-if (*s == accept[j])
-{
-return (s);
+haystack++;
+str2++;
 }
-j++; /*add j+1*/
-}
-s++; /*add s+1*/
+if (*str2 == '\0')
+return (str1);
+haystack = str1 + 1;
 }
 return (0);
 }
