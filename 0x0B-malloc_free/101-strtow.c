@@ -1,9 +1,9 @@
-#include <stdlib.h>"
+#include <stdlib.h>
 #include "main.h"
 /**
 * strtow - splits a string into words
 * @str: string of words to be split
-* Return: double pointer to strings
+* Return: no of strings
 */
 int word_count(char *s)
 {
