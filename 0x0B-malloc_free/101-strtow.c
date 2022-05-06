@@ -36,7 +36,7 @@ int i, k = 0, len = 0, words, c = 0, start, end;
 
 while (*(str + len))
 len++;
-words = words_count(str);
+words = word_count(str);
 if (words == 0)
 return (NULL);
 
