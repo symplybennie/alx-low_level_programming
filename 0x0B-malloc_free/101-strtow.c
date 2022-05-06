@@ -1,99 +1,73 @@
 #include "main.h"
+#include "main.h"
 /**
 * strtow - splits a string into words
 * @str: string of words to be split
 * Return: double pointer to strings
 */
+int word_count(char *s)
+{
+int i, num = 0;
 
+for (i = 0; s[i] != '\0'; i++)
+{
+if (*s == ' ' )
+s++;
+else
+{
+for (; s[i] != ' ' && s[i] != '\0'; i++)
+s++;
+num++;
+}
+}
+return (num);
+}
+/*
+* **strow - function that splits a string into words
+*@str: string
+*
+*Return: pointer to an array of strings if success,
+*Null otherwise
+*/
 char **strtow(char *str)
 {
-char **ptr;
-int i, k, len, start, end, j = 0;
-int words =  countWords(str);
+char **p, *temp;
+int i, k = 0, len = 0, words, c = 0, start, end;
 
-if (!str || !countWords(str))
+while (*(str + len))
+len++;
+words = words_count(str);
+if (words == 0)
 return (NULL);
-ptr = malloc(sizeof(char *) * (words + 1));
-if (!ptr)
-return (NULL);
-for (i = 0; i < words; i++)
-{
-start = startIndex(str, j);
-end = endIndex(str, start);
-len = end - start;
-ptr[i] = malloc(sizeof(char) * (len + 1));
-if (!ptr[i])
-{
-i -= 1;
-while (i >= 0)
-{
-free(ptr[i]);
-i--;
-}
-free(ptr);
-return (NULL);
-}
-for (k = 0; k < len; k++)
-ptr[i][k] = str[start++];
-ptr[i][k++] = '\0';
-j = end + 1;
-}
-ptr[i] = NULL;
-return (ptr);
-}
-/*
-* isSpace - determines if character is a space or not
-* @c: input char
-* Return: 1 if true or 0 or not
-*/
-int isSpace(char c)
-{
-return (c == ' ');
-}
-/*
-* startIndex - returns first index of non-space char
-* @s: input string
-* @index: starting index
-* Return: index of first non-space char
-*/
-int startIndex(char *s, int index)
-{
-while (isSpace(*(s + index)))
-index++;
-return (index);
-}
-/*
-* endIndex - returns last index of non-space char
-* @s: input string
-* @index: starting index
-* Return: index of last index of non-space char
-*/
-int endIndex(char *s, int index)
-{
-while (!isSpace(*(s + index)))
-index++;
-return (index);
-}
-/*
-* countWords - counts numbers of words in string
-* @s: input string
-* Return: number of words
-*/
-int countWords(char *s)
-{
-int wordOn = 0;
-int words = 0;
 
-while (*s)
+p = (char **) malloc(sizeof(char *) * (words + 1));
+if (p == NULL)
+return (NULL);
+
+for (i = 0; i<=len; i++)
 {
-if (isSpace(*s) && wordOn)
-wordOn = 0;
-else if (!isSpace(*s) && !wordOn)
+if (str[i] == ' ' || str[i] == '\0')
 {
-wordOn = 1;
-words++;
+if (c)
+{
+end = i;
+temp = (char *) malloc(sizeof(char) * (c +1));
+
+if (temp == NULL)
+return (NULL);
+
+while (start < end)
+*temp++ = str[7start++];
+*temp = '\0';
+p[k] = temp -c;
+k++;
+c = 0;
 }
-s++;
 }
-return (words);
+else if (c++ == 0)
+start = i;
+}
+
+p[k] = NULL;
+return (p);
 }
