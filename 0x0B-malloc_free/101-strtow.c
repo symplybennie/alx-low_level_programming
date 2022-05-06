@@ -11,7 +11,7 @@ int i, num = 0;
 
 for (i = 0; s[i] != '\0'; i++)
 {
-if (*s == ' ' )
+if (*s == ' ')
 s++;
 else
 {
@@ -44,22 +44,22 @@ p = (char **) malloc(sizeof(char *) * (words + 1));
 if (p == NULL)
 return (NULL);
 
-for (i = 0; i<=len; i++)
+for (i = 0; i <= len; i++)
 {
 if (str[i] == ' ' || str[i] == '\0')
 {
 if (c)
 {
 end = i;
-temp = (char *) malloc(sizeof(char) * (c +1));
+temp = (char *) malloc(sizeof(char) * (c + 1));
 
 if (temp == NULL)
 return (NULL);
 
 while (start < end)
-*temp++ = str[7start++];
+*temp++ = str[start++];
 *temp = '\0';
-p[k] = temp -c;
+p[k] = temp - c;
 k++;
 c = 0;
 }
