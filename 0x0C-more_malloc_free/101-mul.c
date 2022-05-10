@@ -3,12 +3,12 @@
 #include <stdio.h>
 
 /**
-* is_digit - checks if a string contains a non-digit char
+* isNum - checks if a string contains a non-digit char
 *@s: string to be evaluated
 *
 *Return: 0 if a non-digit is found, 1 otherwise
 */
-int is_digit(char *s)
+int isNum(char *s)
 {
 int i = 0;
 
@@ -56,10 +56,12 @@ exit(98);
 int main(int argc, char *argv[])
 {
 char *s1, *s2;
-int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
+int len1, len2, len, i, carry;
+int num1, num2;
+int *result, a = 0;
 
 s1 = argv[1], s2 = argv[2];
-if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+if (argc != 3 || !isNum(s1) || !isNum(s2))
 errors();
 len1 = _strlen(s1);
 len2 = _strlen(s2);
@@ -71,12 +73,12 @@ for (i = 0; i <= len1 + len2; i++)
 result[i] = 0;
 for (len1 = len1 - 1; len1 >= 0; len1--)
 {
-digit2 = s2[len2] - '0';
+num2 = s2[len2] - '0';
 carry = 0;
 for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 {
-digit2 = s2[len2] - '0';
-carry += result[len1 + len2 + 1] + (digit1 * digit2);
+num2 = s2[len2] - '0';
+carry += result[len1 + len2 + 1] + (num1 * num2);
 result[len1 + len2 + 1] = carry % 10;
 carry /= 10;
 }
@@ -96,37 +98,3 @@ _putchar('\n');
 free(result);
 return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
