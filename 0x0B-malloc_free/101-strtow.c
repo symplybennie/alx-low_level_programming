@@ -1,10 +1,12 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
 * strtow - splits a string into words
 * @str: string of words to be split
 * Return: no of strings
 */
+
 int word_count(char *s)
 {
 int i, num = 0;
@@ -22,13 +24,14 @@ num++;
 }
 return (num);
 }
-/*
+/**
 * **strow - function that splits a string into words
 *@str: string
 *
 *Return: pointer to an array of strings if success,
 *Null otherwise
 */
+
 char **strtow(char *str)
 {
 char **p, *temp;
