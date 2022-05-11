@@ -15,7 +15,7 @@ i++;
 }
 return (i);
 }
-/*
+/**
 *_strcpy - copy arrays
 *@src: array of elements
 *@dest: dest array
@@ -33,7 +33,7 @@ i++;
 dest[i] = '\0';
 return (dest);
 }
-/*
+/**
 *_strdup - array for prints a string
 *@str: array of elements
 *Return: pointer
