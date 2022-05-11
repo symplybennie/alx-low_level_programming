@@ -32,7 +32,7 @@ ptr[i] = '\0';
 return (ptr);
 }
 
-/*
+/**
 * new_dog     - Create a new dog variable
 * @name:        Name of the dog
 * @age:         Age of the dog
