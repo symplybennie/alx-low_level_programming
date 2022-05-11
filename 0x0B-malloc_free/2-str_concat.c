@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
 *_strlen - count arrray
 *@s: array of elements
@@ -16,7 +17,7 @@ i++;
 }
 return (i);
 }
-/*
+/**
 *str_concat - back a pointer to array
 *@s1: Array one
 *@s2: Array two
